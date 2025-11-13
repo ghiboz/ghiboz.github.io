@@ -8,6 +8,13 @@ markdown: kramdown
 # permalink: /:year/:month/:day/:title/
 permalink: /:title/
 
+# Syntax highlighting
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
 # Plugin (opzionali)
 plugins:
   - jekyll-feed
