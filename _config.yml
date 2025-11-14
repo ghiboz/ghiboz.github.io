@@ -126,12 +126,13 @@ comments:
   ## Gitalk
   # please refer to https://github.com/gitalk/gitalk for more info.
   gitalk:
-    clientID    : Ov23li1FyOMzy49M0G3O # GitHub Application Client ID
-    clientSecret: 34010bfd027b4c874a23a04296a16ad884f25db9 # GitHub Application Client Secret
-    repository  : gitalk # GitHub repo
-    owner       : ghiboz # GitHub repo owner
-    distractionFreeMode: false         # modalità full screen o meno
-    createIssueManually: false          # lascia Gitalk creare le issue automaticamente    
+    clientID: 'Ov23li1FyOMzy49M0G3O' # GitHub Application Client ID
+    clientSecret: '34010bfd027b4c874a23a04296a16ad884f25db9' # GitHub Application Client Secret
+    repository: 'gitalk' # GitHub repo
+    owner: 'ghiboz' # GitHub repo owner
+    distractionFreeMode: 'false'         # modalità full screen o meno
+    createIssueManually: 'false'          # lascia Gitalk creare le issue automaticamente    
+    id: 'location.pathname'
     admin: # GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
       # - your GitHub Id
 
