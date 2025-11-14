@@ -1,12 +1,5 @@
-<hr />
-COMMENTS
-<p>The environment is: {{ jekyll.environment }}</p>
-<p>Provider: {{ site.comments.provider }}</p>
-<hr />
-
 {%- if jekyll.environment != 'development' -%}
   {%- if site.comments.provider == 'disqus' -%}
-    <p>comments:</p>
     {%- include comments-providers/disqus.html -%}
   {%- elsif site.comments.provider == 'gitalk' -%}
     {%- include comments-providers/gitalk.html -%}
