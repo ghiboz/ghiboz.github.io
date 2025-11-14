@@ -130,9 +130,10 @@ comments:
     clientSecret: '4c40c7cff76cda0e5ae9a2c8ff84095fbdbccf84' # GitHub Application Client Secret
     repository: 'gitalk' # GitHub repo
     owner: 'ghiboz' # GitHub repo owner
-    admin: ghiboz # GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
-      # - your GitHub Id
-
+    admin:
+      - ghiboz
+    proxy: https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token
+    
   ## Valine
   # please refer to https://valine.js.org/en/ for more info.
   valine:
