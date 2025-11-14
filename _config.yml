@@ -121,7 +121,7 @@ comments:
 
   ## Disqus
   disqus:
-    shortname: simcoder.disqus.com # the Disqus shortname for the site
+    shortname: simcoder # the Disqus shortname for the site
 
   ## Gitalk
   # please refer to https://github.com/gitalk/gitalk for more info.
