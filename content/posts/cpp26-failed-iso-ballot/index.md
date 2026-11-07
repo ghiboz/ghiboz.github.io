@@ -7,9 +7,9 @@ categories: ["code"]
 tags: ["cpp", "cpp26", "contracts", "standards"]
 comments: true
 cover:
-  image: "cover.jpg"
-  alt: "Placeholder cover image"
-  caption: "Placeholder: replace cover.jpg with a photo from Unsplash and credit it here, like: Photo by [Name](https://unsplash.com/@name) on [Unsplash](https://unsplash.com/photos/ID)"
+  image: "alexandre-debieve-FO7JIlwjOtU-unsplash.jpg"
+  alt: "Ccover image"
+  caption: "Photo by [Alexandre Debiève](https://unsplash.com/it/@alexkixa) on [Unsplash](https://unsplash.com/it/foto/fotografia-macro-del-circuito-nero-FO7JIlwjOtU)"
   relative: true
 ---
 
