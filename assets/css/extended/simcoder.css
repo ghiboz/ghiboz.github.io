@@ -1,0 +1,141 @@
+/* SimCoder look: Intel One Mono everywhere, warm off-white page, dark code blocks. */
+
+@font-face {
+    font-family: "Intel One Mono";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/intel-one-mono-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Intel One Mono";
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/intel-one-mono-latin-400-italic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Intel One Mono";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/fonts/intel-one-mono-latin-700-normal.woff2") format("woff2");
+}
+
+:root {
+    --font-mono: "Intel One Mono", ui-monospace, "Cascadia Code", "Fira Code", Menlo, Consolas, monospace;
+
+    /* light, but not white */
+    --theme: rgb(243, 239, 230);
+    --entry: rgb(250, 247, 240);
+    --primary: rgb(43, 42, 39);
+    --secondary: rgb(107, 103, 93);
+    --tertiary: rgb(221, 215, 200);
+    --content: rgb(51, 49, 45);
+    --border: rgb(226, 220, 205);
+    --code-bg: rgb(233, 228, 214);
+
+    /* dark code blocks (same colour as the chroma palette background) */
+    --code-block-bg: rgb(36, 39, 58);
+}
+
+*,
+*::before,
+*::after {
+    font-family: var(--font-mono);
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+/* Code blocks */
+.post-content pre,
+.post-content .highlight {
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.post-content .highlight {
+    background: var(--code-block-bg);
+}
+
+.post-content pre code {
+    font-size: inherit;
+}
+
+/* Inline code on the paper background */
+.post-content :not(pre) > code {
+    background: var(--code-bg);
+    color: var(--primary);
+    border-radius: 4px;
+    padding: 2px 5px;
+}
+
+/* Copy button */
+.copy-code {
+    font-size: 0.75rem;
+}
+
+/* Mermaid diagrams: centered, on a slightly lighter card */
+pre.mermaid {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    text-align: center;
+    overflow-x: auto;
+    color: var(--primary);
+}
+
+/* Responsive YouTube embeds (Hugo's shortcode already wraps them in a 16:9 box) */
+.post-content iframe {
+    border: 0;
+    border-radius: var(--radius);
+}
+
+/* Images */
+.post-content img {
+    border-radius: var(--radius);
+}
+
+.post-content figure {
+    margin: 1.5rem 0;
+}
+
+/* Cover image at the top of an article */
+.entry-cover img {
+    border-radius: var(--radius);
+}
+
+.entry-cover figcaption {
+    font-size: 0.8rem;
+    color: var(--secondary);
+}
+
+/* Header logo */
+.logo img {
+    border-radius: 6px;
+    margin-inline-end: 8px;
+}
+
+/* "Copy link" share button: same look as the icon links next to it */
+.share-buttons .copy-link {
+    display: inline-flex;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.share-buttons .copy-link-msg {
+    align-self: center;
+    margin-inline-start: 8px;
+    font-size: 0.8rem;
+    color: var(--secondary);
+}

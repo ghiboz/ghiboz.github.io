@@ -1,3 +1,109 @@
-baseURL = 'https://example.org/'
-locale = 'en-us'
-title = 'My New Hugo Project'
+baseURL = "https://simcoder.ghiboz.com/"
+locale = "en-US"
+title = "SimCoder"
+theme = "PaperMod"
+enableRobotsTXT = true
+enableEmoji = true
+
+[pagination]
+  pagerSize = 8
+
+# The home page also emits a JSON index, used by the search page.
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[markup]
+  [markup.highlight]
+    # Classes (not inline styles): the colours come from the theme's chroma CSS.
+    noClasses = false
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    # Line numbers in a separate table column: they are not selectable,
+    # so the "copy" button copies only the code.
+    lineNumbersInTable = true
+    tabWidth = 4
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+
+# YouTube embeds via youtube-nocookie.com (no tracking cookies until played).
+[privacy]
+  [privacy.youtube]
+    privacyEnhanced = true
+
+[params]
+  env = "production"
+  description = "A place where sim and coding meet up."
+  author = "Ghiboz"
+  defaultTheme = "light"
+  disableThemeToggle = true
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = false
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+  # Share buttons: X/Twitter, Facebook and "copy link" (short link when the article has one).
+  # Hide them on a single article with `disableShare: true`.
+  ShowShareButtons = true
+  ShareButtons = ["x", "facebook", "copy"]
+
+  # Image used in X/Facebook cards when an article has no cover (1200x630, in static/images/).
+  defaultSocialImage = "/images/social-default.jpg"
+
+  # Logo next to the blog title (file in static/images/).
+  [params.label]
+    text = "SimCoder"
+    icon = "/images/logo.svg"
+    iconHeight = 28
+  # Comments are chosen per article with `comments: true` in the front matter.
+  # Fill in the values from https://giscus.app to enable them (see README.md).
+  [params.giscus]
+    repo = ""
+    repoId = ""
+    category = ""
+    categoryId = ""
+
+  [params.homeInfoParams]
+    Title = "SimCoder"
+    Content = "A place where sim and coding meet up. Notes from the intersection of racing simulation and software development."
+
+  [[params.socialIcons]]
+    name = "x"
+    url = "https://x.com/ghiboz"
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/ghiboz"
+  [[params.socialIcons]]
+    name = "telegram"
+    url = "https://t.me/ghiboz"
+  [[params.socialIcons]]
+    name = "rss"
+    url = "index.xml"
+
+[menus]
+  [[menus.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 1
+  [[menus.main]]
+    name = "Categories"
+    url = "/categories/"
+    weight = 2
+  [[menus.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 3
+  [[menus.main]]
+    name = "Search"
+    url = "/search/"
+    weight = 4
+  [[menus.main]]
+    name = "About"
+    url = "/about/"
+    weight = 5

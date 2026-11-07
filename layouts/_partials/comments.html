@@ -1,0 +1,23 @@
+{{- /* Giscus comments (GitHub Discussions). Shown only when the article has `comments: true`
+       and the [params.giscus] values in hugo.toml are filled in. */ -}}
+{{- with site.Params.giscus }}
+{{- if and .repo .repoId .category .categoryId }}
+<div class="giscus-wrapper" style="margin-top: 2rem;">
+<script src="https://giscus.app/client.js"
+        data-repo="{{ .repo }}"
+        data-repo-id="{{ .repoId }}"
+        data-category="{{ .category }}"
+        data-category-id="{{ .categoryId }}"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+{{- end }}
+{{- end }}

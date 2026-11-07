@@ -1,0 +1,14 @@
+{{- /* ```mermaid fenced blocks become diagrams. The script is emitted once per page, only on pages
+       that contain a diagram. (Not in the footer: PaperMod caches the footer across pages.) */ -}}
+{{- if not (.Page.Store.Get "hasMermaid") -}}
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'neutral',
+        themeVariables: { fontFamily: '"Intel One Mono", ui-monospace, monospace' }
+    });
+</script>
+{{- end -}}
+<pre class="mermaid">{{ .Inner | htmlEscape | safeHTML }}</pre>
+{{- .Page.Store.Set "hasMermaid" true -}}

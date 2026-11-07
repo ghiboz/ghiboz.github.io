@@ -1,0 +1,32 @@
+{{- /* Same as PaperMod's, but the image comes from the social-image partial (1200x630, see there). */ -}}
+{{- $social := partial "social-image.html" . }}
+{{- if $social.url }}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ $social.url }}">
+{{- with $social.alt }}
+<meta name="twitter:image:alt" content="{{ . }}">
+{{- end }}
+{{- else }}
+<meta name="twitter:card" content="summary">
+{{- end }}
+
+{{- with or .Title site.Title site.Params.title | plainify }}
+  <meta name="twitter:title" content="{{ . }}">
+{{- end }}
+
+{{- with or .Description .Summary site.Params.description | plainify | htmlUnescape }}
+  <meta name="twitter:description" content="{{ trim . "\n\r\t " }}">
+{{- end }}
+
+{{- $twitterSite := "" }}
+{{- with site.Params.social }}
+  {{- if reflect.IsMap . }}
+    {{- with .twitter }}
+      {{- $content := . }}
+      {{- if not (strings.HasPrefix . "@") }}
+        {{- $content = printf "@%v" . }}
+      {{- end }}
+      <meta name="twitter:site" content="{{ $content }}">
+    {{- end }}
+  {{- end }}
+{{- end }}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" role="img" aria-label="A stylised track layout">
+  <rect width="640" height="320" fill="#faf7f0"/>
+  <path d="M120 230 C60 230 50 150 110 120 C170 90 200 130 260 110 C330 85 330 40 400 40 C480 40 560 70 560 140 C560 210 470 190 430 230 C390 270 330 280 270 262 C210 245 180 230 120 230 Z"
+        fill="none" stroke="#24273a" stroke-width="26" stroke-linejoin="round"/>
+  <path d="M120 230 C60 230 50 150 110 120 C170 90 200 130 260 110 C330 85 330 40 400 40 C480 40 560 70 560 140 C560 210 470 190 430 230 C390 270 330 280 270 262 C210 245 180 230 120 230 Z"
+        fill="none" stroke="#faf7f0" stroke-width="2" stroke-dasharray="10 12" stroke-linejoin="round"/>
+  <rect x="236" y="244" width="6" height="34" fill="#c0392b" transform="rotate(14 239 261)"/>
+</svg>

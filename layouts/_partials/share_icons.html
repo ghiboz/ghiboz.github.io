@@ -1,0 +1,70 @@
+{{- /* Share buttons: X/Twitter, Facebook and "copy link" (copies the article's full permalink). */ -}}
+{{- $pageurl := .Permalink }}
+{{- $title := .Title }}
+
+{{- $tags := ""}}
+{{- with .Params.Tags }}
+{{- $hashtags := slice }}
+{{- range . }}{{ $hashtags = $hashtags | append (replaceRE "(\\s)" "" . ) }}{{end}}
+{{- $tags = delimit $hashtags "," }}
+{{- end -}}
+
+{{- $ShareButtons := (.Param "ShareButtons") | default (slice "x" "facebook" "copy") }}
+
+<ul class="share-buttons">
+    {{- if or (in $ShareButtons "x") (in $ShareButtons "twitter") }}
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share {{ $title | plainify }} on x"
+            href="https://x.com/intent/tweet/?text={{ $title }}&amp;url={{ $pageurl }}&amp;hashtags={{- $tags -}}">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    {{- end }}
+    {{- if in $ShareButtons "facebook" }}
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share {{ $title | plainify }} on facebook"
+            href="https://facebook.com/sharer/sharer.php?u={{ $pageurl }}">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    {{- end }}
+    {{- if in $ShareButtons "copy" }}
+    <li>
+        <button type="button" class="copy-link" data-url="{{ $pageurl }}" aria-label="copy the link to this article"
+            title="Copy link ({{ $pageurl }})">
+            <svg version="1.1" viewBox="0 0 512 512" height="30px" width="30px" fill="currentColor">
+                <rect width="512" height="512" rx="62" />
+                <g transform="translate(96 96) scale(13.333)" fill="none" style="stroke: var(--code-bg)"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                </g>
+            </svg>
+        </button>
+        <span class="copy-link-msg" role="status" aria-live="polite"></span>
+    </li>
+    <script>
+        document.querySelectorAll('.copy-link').forEach((btn) => {
+            btn.addEventListener('click', async () => {
+                const msg = btn.parentNode.querySelector('.copy-link-msg');
+                const done = (text) => {
+                    msg.textContent = text;
+                    setTimeout(() => { msg.textContent = ''; }, 2000);
+                };
+                try {
+                    await navigator.clipboard.writeText(btn.dataset.url);
+                    done('link copied!');
+                } catch (e) {
+                    window.prompt('Copy this link:', btn.dataset.url);
+                }
+            });
+        });
+    </script>
+    {{- end }}
+</ul>
