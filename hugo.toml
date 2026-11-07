@@ -64,10 +64,10 @@ enableEmoji = true
   # Comments are chosen per article with `comments: true` in the front matter.
   # Fill in the values from https://giscus.app to enable them (see README.md).
   [params.giscus]
-    repo = ""
-    repoId = ""
-    category = ""
-    categoryId = ""
+    repo = "ghiboz/ghiboz.github.io"
+    repoId = "R_kgDOQUzxGw"
+    category = "General"
+    categoryId = "DIC_kwDOQUzxG84DKmHL"
 
   [params.homeInfoParams]
     Title = "SimCoder"
