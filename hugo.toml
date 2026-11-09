@@ -85,8 +85,14 @@ enableEmoji = true
     name = "github"
     url = "https://github.com/ghiboz"
   [[params.socialIcons]]
-    name = "telegram"
-    url = "https://t.me/ghiboz"
+    name = "stackoverflow"
+    url = "https://stackoverflow.com/users/349045/ghiboz?tab=questions"
+  [[params.socialIcons]]
+    name = "youtube"
+    url = "https://www.youtube.com/@ghiboz"
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/paolo-ghibaudo-0b3b315/"
   [[params.socialIcons]]
     name = "rss"
     url = "index.xml"

@@ -20,14 +20,14 @@
   url: "https://stackoverflow.com/users/349045/ghiboz?tab=questions"
   color: "#f48024"
 
-- icon: linkedin
-  title: LinkedIn
-  handle: Paolo Ghibaudo
-  url: "https://www.linkedin.com/in/paolo-ghibaudo-0b3b315/"
-  color: "#0a66c2"
-
 - icon: youtube
   title: YouTube
   handle: "@ghiboz"
   url: "https://www.youtube.com/@ghiboz"
   color: "#ff0000"
+
+- icon: linkedin
+  title: LinkedIn
+  handle: Paolo Ghibaudo
+  url: "https://www.linkedin.com/in/paolo-ghibaudo-0b3b315/"
+  color: "#0a66c2"
