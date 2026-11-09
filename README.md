@@ -65,6 +65,8 @@ Le versioni delle action nel workflow (`checkout@v4` ecc.) potrebbero avere nel 
 ## Dove si cambia l'aspetto
 
 - `assets/css/extended/simcoder.css`: font, colori della pagina (variabili `--theme`, `--entry`, ...), colore dei blocchi di codice (`--code-block-bg`).
+- Colori: la barra in alto usa `--header-bg` (`#34679a`) e `--header-fg`; lo sfondo è un azzurro "Daphne Blue" (`--theme` per gli articoli, `--code-bg` per la home, `--entry` per le card). Il colore della barra del browser sul telefono è `theme_color` in `hugo.toml`.
+- Sempre in `simcoder.css`, in cima alla sezione layout: `--main-width` (larghezza della colonna, ora 840px), `--cover-ratio` (forma della copertina nell'articolo: `5 / 2` è circa il 60% dell'altezza di una foto `3 / 2`; per una copertina ancora più bassa prova `3 / 1`), `--thumb-width` e `--thumb-ratio` (miniatura nella home, ora 200px e `4 / 3`). Sotto i 600px di larghezza (telefono) la miniatura torna sopra il titolo.
 - `hugo.toml`: titolo, menu, icone social, opzioni del tema.
 - `static/fonts/`: Intel One Mono (licenza OFL 1.1, vedi `README.txt` nella cartella).
 

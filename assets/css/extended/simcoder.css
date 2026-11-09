@@ -27,15 +27,19 @@
 :root {
     --font-mono: "Intel One Mono", ui-monospace, "Cascadia Code", "Fira Code", Menlo, Consolas, monospace;
 
-    /* light, but not white */
-    --theme: rgb(243, 239, 230);
-    --entry: rgb(250, 247, 240);
-    --primary: rgb(43, 42, 39);
-    --secondary: rgb(107, 103, 93);
-    --tertiary: rgb(221, 215, 200);
-    --content: rgb(51, 49, 45);
-    --border: rgb(226, 220, 205);
-    --code-bg: rgb(233, 228, 214);
+    /* Daphne Blue: pale sky blue, light but not white */
+    --theme: rgb(219, 232, 241);          /* article page background */
+    --code-bg: rgb(201, 220, 234);        /* home/list page background, inline code, TOC */
+    --entry: rgb(238, 244, 249);          /* cards */
+    --primary: rgb(26, 38, 52);
+    --content: rgb(34, 47, 62);
+    --secondary: rgb(74, 94, 114);
+    --tertiary: rgb(172, 196, 215);
+    --border: rgb(190, 209, 224);
+
+    /* header bar */
+    --header-bg: #34679a;
+    --header-fg: #f2f7fb;
 
     /* dark code blocks (same colour as the chroma palette background) */
     --code-block-bg: rgb(36, 39, 58);
@@ -107,7 +111,68 @@ pre.mermaid {
     margin: 1.5rem 0;
 }
 
-/* Cover image at the top of an article */
+/* Wider content column (PaperMod default: 720px) */
+:root {
+    --main-width: 840px;
+    /* Shape of the cover at the top of an article: width / height.
+       3 / 2 is a typical photo; 5 / 2 is about 60% as tall. Bigger first number = lower image. */
+    --cover-ratio: 5 / 2;
+    /* Thumbnail in the home list */
+    --thumb-width: 200px;
+    --thumb-ratio: 4 / 3;
+}
+
+/* Cover image at the top of an article: lower, cropped from the centre */
+.post-single .entry-cover img {
+    aspect-ratio: var(--cover-ratio);
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Home / list: small image on the left, title and text on the right */
+.post-entry:not(.tag-entry):has(.entry-cover) {
+    display: grid;
+    grid-template-columns: var(--thumb-width) minmax(0, 1fr);
+    column-gap: var(--gap);
+    align-items: start;
+}
+
+.post-entry:not(.tag-entry):has(.entry-cover) > * {
+    grid-column: 2;
+}
+
+.post-entry:not(.tag-entry):has(.entry-cover) > .entry-cover {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    margin: 0;
+}
+
+.post-entry:not(.tag-entry):has(.entry-cover) > .entry-link {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+}
+
+.post-entry .entry-cover img {
+    aspect-ratio: var(--thumb-ratio);
+    object-fit: cover;
+}
+
+/* Phones: image on top again, full width */
+@media (max-width: 600px) {
+    .post-entry:not(.tag-entry):has(.entry-cover) {
+        display: block;
+    }
+
+    .post-entry:not(.tag-entry):has(.entry-cover) > .entry-cover {
+        margin-bottom: var(--gap);
+    }
+
+    .post-entry .entry-cover img {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+/* Cover image: rounded corners */
 .entry-cover img {
     border-radius: var(--radius);
 }
@@ -115,6 +180,27 @@ pre.mermaid {
 .entry-cover figcaption {
     font-size: 0.8rem;
     color: var(--secondary);
+}
+
+/* Header: full-width bar in the favourite blue */
+.header {
+    background: var(--header-bg);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+.header,
+.header a,
+.header .logo a {
+    color: var(--header-fg);
+}
+
+.header .menu a {
+    opacity: 0.85;
+}
+
+.header .menu a:hover,
+.header .menu .active {
+    opacity: 1;
 }
 
 /* Header logo */

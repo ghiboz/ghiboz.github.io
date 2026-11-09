@@ -56,6 +56,11 @@ enableEmoji = true
   # Image used in X/Facebook cards when an article has no cover (1200x630, in static/images/).
   defaultSocialImage = "/images/social-default.jpg"
 
+  # Colour of the browser bar on phones
+  [params.assets]
+    theme_color = "#34679a"
+    msapplication_TileColor = "#34679a"
+
   # Logo next to the blog title (file in static/images/).
   [params.label]
     text = "SimCoder"

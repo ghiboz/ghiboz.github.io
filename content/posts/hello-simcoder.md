@@ -1,7 +1,7 @@
 ---
 title: "Hello, SimCoder"
 date: 2026-11-07T09:00:00+01:00
-draft: false
+draft: true
 summary: "A test article that exercises everything the site can do: code, diagrams, images and video."
 categories: ["simcoder"]
 tags: ["meta", "cpp", "csharp"]
