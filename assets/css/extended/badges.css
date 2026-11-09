@@ -1,0 +1,64 @@
+/* Profile banners (About page): colour tile with the icon, platform name and handle */
+
+.profile-badges {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 12px;
+    margin: 1.5rem 0;
+}
+
+.post-content a.profile-badge {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: none;
+    text-decoration: none;
+    color: var(--primary);
+    transition: transform 0.12s ease, border-color 0.12s ease;
+}
+
+.post-content a.profile-badge:hover,
+.post-content a.profile-badge:focus-visible {
+    transform: translateY(-2px);
+    border-color: var(--badge-color, var(--tertiary));
+}
+
+.profile-badge-icon {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: var(--badge-color, var(--primary));
+    color: #ffffff;
+}
+
+.profile-badge-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.profile-badge-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    line-height: 1.3;
+}
+
+.profile-badge-text strong {
+    font-size: 1rem;
+}
+
+.profile-badge-text small {
+    color: var(--secondary);
+    font-size: 0.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

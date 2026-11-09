@@ -1,0 +1,15 @@
+{{- /* Banners with the links in data/profiles.yaml. Entries without a url are skipped. */ -}}
+<div class="profile-badges">
+{{- range hugo.Data.profiles }}
+  {{- if .url }}
+  <a class="profile-badge" href="{{ .url | safeURL }}" target="_blank" rel="noopener noreferrer me"
+     style="{{ printf "--badge-color: %s" .color | safeCSS }}">
+    <span class="profile-badge-icon">{{ partial "svg.html" (dict "name" .icon) }}</span>
+    <span class="profile-badge-text">
+      <strong>{{ .title }}</strong>
+      {{- with .handle }}<small>{{ . }}</small>{{ end }}
+    </span>
+  </a>
+  {{- end }}
+{{- end }}
+</div>

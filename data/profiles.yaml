@@ -1,0 +1,33 @@
+# Profile links shown as banners on the About page ({{< profile-badges >}}).
+# Order = order on the page. An entry with an empty url is not shown:
+# fill in the YouTube address below to make its banner appear.
+# `icon` is one of PaperMod's icon names (x, github, stackoverflow, linkedin, youtube, telegram, ...).
+- icon: x
+  title: X
+  handle: "@ghiboz"
+  url: "https://x.com/ghiboz"
+  color: "#000000"
+
+- icon: github
+  title: GitHub
+  handle: ghiboz
+  url: "https://github.com/ghiboz"
+  color: "#24292f"
+
+- icon: stackoverflow
+  title: Stack Overflow
+  handle: ghiboz
+  url: "https://stackoverflow.com/users/349045/ghiboz?tab=questions"
+  color: "#f48024"
+
+- icon: linkedin
+  title: LinkedIn
+  handle: Paolo Ghibaudo
+  url: "https://www.linkedin.com/in/paolo-ghibaudo-0b3b315/"
+  color: "#0a66c2"
+
+- icon: youtube
+  title: YouTube
+  handle: "@ghiboz"
+  url: "https://www.youtube.com/@ghiboz"
+  color: "#ff0000"
